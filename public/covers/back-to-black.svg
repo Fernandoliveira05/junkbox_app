@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-label="Back to Black cover">
+  <rect width="900" height="900" fill="#f1f1ed"/>
+  <rect x="78" y="78" width="744" height="744" rx="26" fill="#111111"/>
+  <circle cx="450" cy="362" r="202" fill="#c9a227" opacity="0.94"/>
+  <circle cx="450" cy="362" r="136" fill="#f1f1ed" opacity="0.9"/>
+  <path d="M158 596c124-78 219-92 337-40 88 39 166 43 247-14" fill="none" stroke="#c9a227" stroke-width="34" stroke-linecap="round" opacity="0.86"/>
+  <path d="M208 220h484M208 504h484" stroke="#f1f1ed" stroke-width="18" stroke-linecap="round" opacity="0.55"/>
+  <text x="450" y="408" fill="#111111" font-family="Arial Black, Arial, sans-serif" font-size="126" font-weight="900" text-anchor="middle">BTB</text>
+  <text x="450" y="710" fill="#c9a227" font-family="Arial, sans-serif" font-size="46" font-weight="700" text-anchor="middle">BACK TO BLACK</text>
+  <text x="450" y="764" fill="#c9a227" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" opacity="0.82">AMY WINEHOUSE</text>
+</svg>

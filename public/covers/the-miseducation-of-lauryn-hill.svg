@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-label="The Miseducation of Lauryn Hill cover">
+  <rect width="900" height="900" fill="#7a3f2a"/>
+  <rect x="78" y="78" width="744" height="744" rx="26" fill="#f1d2a0"/>
+  <circle cx="450" cy="362" r="202" fill="#263238" opacity="0.94"/>
+  <circle cx="450" cy="362" r="136" fill="#7a3f2a" opacity="0.9"/>
+  <path d="M158 596c124-78 219-92 337-40 88 39 166 43 247-14" fill="none" stroke="#263238" stroke-width="34" stroke-linecap="round" opacity="0.86"/>
+  <path d="M208 220h484M208 504h484" stroke="#7a3f2a" stroke-width="18" stroke-linecap="round" opacity="0.55"/>
+  <text x="450" y="408" fill="#f1d2a0" font-family="Arial Black, Arial, sans-serif" font-size="126" font-weight="900" text-anchor="middle">TMO</text>
+  <text x="450" y="710" fill="#263238" font-family="Arial, sans-serif" font-size="46" font-weight="700" text-anchor="middle">THE MISEDUCATION OF LAURY...</text>
+  <text x="450" y="764" fill="#263238" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" opacity="0.82">LAURYN HILL</text>
+</svg>

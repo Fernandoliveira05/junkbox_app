@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-label="The College Dropout cover">
+  <rect width="900" height="900" fill="#7b4f2c"/>
+  <rect x="78" y="78" width="744" height="744" rx="26" fill="#f0c36a"/>
+  <circle cx="450" cy="362" r="202" fill="#3a2416" opacity="0.94"/>
+  <circle cx="450" cy="362" r="136" fill="#7b4f2c" opacity="0.9"/>
+  <path d="M158 596c124-78 219-92 337-40 88 39 166 43 247-14" fill="none" stroke="#3a2416" stroke-width="34" stroke-linecap="round" opacity="0.86"/>
+  <path d="M208 220h484M208 504h484" stroke="#7b4f2c" stroke-width="18" stroke-linecap="round" opacity="0.55"/>
+  <text x="450" y="408" fill="#f0c36a" font-family="Arial Black, Arial, sans-serif" font-size="126" font-weight="900" text-anchor="middle">TCD</text>
+  <text x="450" y="710" fill="#3a2416" font-family="Arial, sans-serif" font-size="46" font-weight="700" text-anchor="middle">THE COLLEGE DROPOUT</text>
+  <text x="450" y="764" fill="#3a2416" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" opacity="0.82">KANYE WEST</text>
+</svg>

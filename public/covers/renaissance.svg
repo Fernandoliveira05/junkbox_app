@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-label="RENAISSANCE cover">
+  <rect width="900" height="900" fill="#141820"/>
+  <rect x="78" y="78" width="744" height="744" rx="26" fill="#d9d6ce"/>
+  <circle cx="450" cy="362" r="202" fill="#b7a16b" opacity="0.94"/>
+  <circle cx="450" cy="362" r="136" fill="#141820" opacity="0.9"/>
+  <path d="M158 596c124-78 219-92 337-40 88 39 166 43 247-14" fill="none" stroke="#b7a16b" stroke-width="34" stroke-linecap="round" opacity="0.86"/>
+  <path d="M208 220h484M208 504h484" stroke="#141820" stroke-width="18" stroke-linecap="round" opacity="0.55"/>
+  <text x="450" y="408" fill="#d9d6ce" font-family="Arial Black, Arial, sans-serif" font-size="126" font-weight="900" text-anchor="middle">R</text>
+  <text x="450" y="710" fill="#b7a16b" font-family="Arial, sans-serif" font-size="46" font-weight="700" text-anchor="middle">RENAISSANCE</text>
+  <text x="450" y="764" fill="#b7a16b" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" opacity="0.82">BEYONCE</text>
+</svg>

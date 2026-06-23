@@ -1,0 +1,737 @@
+openapi: 3.1.0
+info:
+  title: JunkBox API
+  version: 0.1.0
+  description: API for profiles, songs, albums, reviews and AudD music recognition.
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:3333
+security:
+  - bearerAuth: []
+tags:
+  - name: Health
+    description: Service status endpoints.
+  - name: Auth
+    description: Account registration and login.
+  - name: Profiles
+    description: User profile endpoints.
+  - name: Songs
+    description: Song catalog endpoints.
+  - name: Albums
+    description: Album catalog endpoints.
+  - name: Reviews
+    description: User ratings and reviews.
+  - name: Recognition
+    description: Music recognition through AudD.
+paths:
+  /health:
+    get:
+      tags: [Health]
+      security: []
+      operationId: getHealth
+      summary: Service health check
+      responses:
+        "200":
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+  /auth/register:
+    post:
+      tags: [Auth]
+      security: []
+      operationId: registerProfile
+      summary: Create a JunkBox account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterRequest"
+      responses:
+        "201":
+          description: Account created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "409":
+          $ref: "#/components/responses/Conflict"
+  /auth/login:
+    post:
+      tags: [Auth]
+      security: []
+      operationId: loginProfile
+      summary: Login with email and password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Login completed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+  /profiles/me:
+    get:
+      tags: [Profiles]
+      operationId: getCurrentProfile
+      summary: Get authenticated profile
+      responses:
+        "200":
+          description: Current profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+    patch:
+      tags: [Profiles]
+      operationId: updateCurrentProfile
+      summary: Update authenticated profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateProfileRequest"
+      responses:
+        "200":
+          description: Updated profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+  /profiles/{username}:
+    get:
+      tags: [Profiles]
+      security: []
+      operationId: getPublicProfile
+      summary: Get a public profile by username
+      parameters:
+        - $ref: "#/components/parameters/Username"
+      responses:
+        "200":
+          description: Public profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicProfile"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /songs:
+    get:
+      tags: [Songs]
+      security: []
+      operationId: listSongs
+      summary: List songs
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+        - name: artist
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Song list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Song"
+    post:
+      tags: [Songs]
+      operationId: createSong
+      summary: Create a song
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateSongRequest"
+      responses:
+        "201":
+          description: Created song
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Song"
+  /songs/{songId}:
+    get:
+      tags: [Songs]
+      security: []
+      operationId: getSong
+      summary: Get a song
+      parameters:
+        - $ref: "#/components/parameters/SongId"
+      responses:
+        "200":
+          description: Song
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Song"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    patch:
+      tags: [Songs]
+      operationId: updateSong
+      summary: Update a song created by the current user
+      parameters:
+        - $ref: "#/components/parameters/SongId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateSongRequest"
+      responses:
+        "200":
+          description: Updated song
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Song"
+    delete:
+      tags: [Songs]
+      operationId: deleteSong
+      summary: Delete a song created by the current user
+      parameters:
+        - $ref: "#/components/parameters/SongId"
+      responses:
+        "204":
+          description: Song deleted
+  /albums:
+    get:
+      tags: [Albums]
+      security: []
+      operationId: listAlbums
+      summary: List albums
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+        - name: artist
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Album list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Album"
+    post:
+      tags: [Albums]
+      operationId: createAlbum
+      summary: Create an album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateAlbumRequest"
+      responses:
+        "201":
+          description: Created album
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Album"
+  /albums/{albumId}:
+    get:
+      tags: [Albums]
+      security: []
+      operationId: getAlbum
+      summary: Get an album
+      parameters:
+        - $ref: "#/components/parameters/AlbumId"
+      responses:
+        "200":
+          description: Album
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Album"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    patch:
+      tags: [Albums]
+      operationId: updateAlbum
+      summary: Update an album created by the current user
+      parameters:
+        - $ref: "#/components/parameters/AlbumId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateAlbumRequest"
+      responses:
+        "200":
+          description: Updated album
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Album"
+    delete:
+      tags: [Albums]
+      operationId: deleteAlbum
+      summary: Delete an album created by the current user
+      parameters:
+        - $ref: "#/components/parameters/AlbumId"
+      responses:
+        "204":
+          description: Album deleted
+  /reviews:
+    post:
+      tags: [Reviews]
+      operationId: createReview
+      summary: Review a song or album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateReviewRequest"
+      responses:
+        "201":
+          description: Created review
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Review"
+  /reviews/me:
+    get:
+      tags: [Reviews]
+      operationId: listMyReviews
+      summary: List reviews created by the authenticated user
+      responses:
+        "200":
+          description: Authenticated user's reviews
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Review"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+  /reviews/{targetType}/{targetId}:
+    get:
+      tags: [Reviews]
+      security: []
+      operationId: listReviewsForTarget
+      summary: List reviews for a song or album
+      parameters:
+        - name: targetType
+          in: path
+          required: true
+          schema:
+            $ref: "#/components/schemas/ReviewTargetType"
+        - name: targetId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Review list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Review"
+  /recognition/audd:
+    post:
+      tags: [Recognition]
+      operationId: recognizeSongWithAudd
+      summary: Identify a currently playing song using AudD
+      description: Send either multipart/form-data with an audio file or application/json with audioUrl.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                return:
+                  type: string
+                  example: apple_music,spotify
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuddUrlRecognitionRequest"
+      responses:
+        "200":
+          description: Recognition result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecognitionResult"
+        "502":
+          description: AudD returned an error or is unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    Username:
+      name: username
+      in: path
+      required: true
+      schema:
+        type: string
+    SongId:
+      name: songId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    AlbumId:
+      name: albumId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    Conflict:
+      description: Resource already exists
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    Unauthorized:
+      description: Invalid or missing credentials
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+  schemas:
+    Health:
+      type: object
+      properties:
+        status:
+          type: string
+          example: ok
+        service:
+          type: string
+          example: junkbox-backend
+      required: [status, service]
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+      required: [message]
+    RegisterRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 3
+          maxLength: 30
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+        displayName:
+          type: string
+          minLength: 1
+      required: [username, email, password, displayName]
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+      required: [email, password]
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        profile:
+          $ref: "#/components/schemas/Profile"
+      required: [token, profile]
+    Profile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        displayName:
+          type: string
+        bio:
+          type: string
+        avatarUrl:
+          type: string
+          format: uri
+        createdAt:
+          type: string
+          format: date-time
+      required: [id, username, email, displayName, createdAt]
+    PublicProfile:
+      allOf:
+        - $ref: "#/components/schemas/Profile"
+      description: Public profile omits email in API responses.
+    UpdateProfileRequest:
+      type: object
+      properties:
+        displayName:
+          type: string
+        bio:
+          type: string
+        avatarUrl:
+          type: string
+          format: uri
+    Song:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        artist:
+          type: string
+        albumId:
+          type: string
+          format: uuid
+        durationSeconds:
+          type: integer
+          minimum: 1
+        releaseDate:
+          type: string
+          format: date
+        coverUrl:
+          type: string
+          format: uri
+        externalIds:
+          type: object
+          additionalProperties:
+            type: string
+        createdBy:
+          type: string
+          format: uuid
+        createdAt:
+          type: string
+          format: date-time
+      required: [id, title, artist, createdBy, createdAt]
+    CreateSongRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        artist:
+          type: string
+        albumId:
+          type: string
+          format: uuid
+        durationSeconds:
+          type: integer
+          minimum: 1
+        releaseDate:
+          type: string
+        coverUrl:
+          type: string
+        externalIds:
+          type: object
+          additionalProperties:
+            type: string
+      required: [title, artist]
+    UpdateSongRequest:
+      allOf:
+        - $ref: "#/components/schemas/CreateSongRequest"
+    Album:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        artist:
+          type: string
+        releaseDate:
+          type: string
+          format: date
+        coverUrl:
+          type: string
+          format: uri
+        songIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+        externalIds:
+          type: object
+          additionalProperties:
+            type: string
+        createdBy:
+          type: string
+          format: uuid
+        createdAt:
+          type: string
+          format: date-time
+      required: [id, title, artist, songIds, createdBy, createdAt]
+    CreateAlbumRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        artist:
+          type: string
+        releaseDate:
+          type: string
+        coverUrl:
+          type: string
+        songIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+        externalIds:
+          type: object
+          additionalProperties:
+            type: string
+      required: [title, artist]
+    UpdateAlbumRequest:
+      allOf:
+        - $ref: "#/components/schemas/CreateAlbumRequest"
+    ReviewTargetType:
+      type: string
+      enum: [song, album]
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        targetType:
+          $ref: "#/components/schemas/ReviewTargetType"
+        targetId:
+          type: string
+          format: uuid
+        rating:
+          type: number
+          minimum: 0.5
+          maximum: 5
+        text:
+          type: string
+        vibeTags:
+          type: array
+          maxItems: 6
+          items:
+            type: string
+          example: [nostalgico, intenso]
+        userId:
+          type: string
+          format: uuid
+        createdAt:
+          type: string
+          format: date-time
+      required: [id, targetType, targetId, rating, userId, createdAt]
+    CreateReviewRequest:
+      type: object
+      properties:
+        targetType:
+          $ref: "#/components/schemas/ReviewTargetType"
+        targetId:
+          type: string
+          format: uuid
+        rating:
+          type: number
+          minimum: 0.5
+          maximum: 5
+        text:
+          type: string
+        vibeTags:
+          type: array
+          maxItems: 6
+          items:
+            type: string
+          example: [nostalgico, intenso]
+      required: [targetType, targetId, rating]
+    AuddUrlRecognitionRequest:
+      type: object
+      properties:
+        audioUrl:
+          type: string
+          format: uri
+        return:
+          type: string
+          example: apple_music,spotify
+      required: [audioUrl]
+    RecognitionResult:
+      type: object
+      properties:
+        provider:
+          type: string
+          example: AudD
+        raw:
+          type: object
+        song:
+          type:
+            - object
+            - "null"
+          properties:
+            title:
+              type: string
+            artist:
+              type: string
+            album:
+              type: string
+            releaseDate:
+              type: string
+            label:
+              type: string
+            timecode:
+              type: string
+            externalIds:
+              type: object
+              additionalProperties:
+                type: string
+      required: [provider, raw]
