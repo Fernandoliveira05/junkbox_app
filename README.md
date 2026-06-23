@@ -39,105 +39,105 @@ Para completar, existe também um lembrete diário de descoberta. Ele funciona c
 
 Mas não só de ideias viveria essa ponderada, também é importante mostrar o JunkBox funcionando de verdade. As telas abaixo ajudam a visualizar o caminho principal do usuário dentro do app, desde o primeiro acesso até a avaliação, o histórico, o compartilhamento e a descoberta musical pelo microfone. A intenção é deixar claro que o projeto não ficou só no conceito, mas ganhou fluxo, interface e uso real em Android.
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Tela de login do JunkBox
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/login_junkbox.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Tela de login do JunkBox"
     />
     <br />
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Tela de registro do JunkBox
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/registro_junk.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Tela de registro do JunkBox"
     />
     <br />
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Biblioteca de álbuns
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/home_albuns.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Biblioteca de álbuns do JunkBox"
     />
     <br />
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Avaliação de álbum com estrelas, comentário e tags
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/classificar.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Tela de avaliação de álbum do JunkBox"
     />
     <br />
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Barra lateral com avaliações salvas
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/barralateral_albuns.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Barra lateral com avaliações salvas no JunkBox"
     />
     <br />
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Imagem de story gerada para compartilhamento
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/imagem_story.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Imagem de story gerada pelo JunkBox para compartilhamento"
     />
     <br />
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
+<p align="center">
   Tela de descoberta musical com AudD
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <img
       src="assets/AudD.png"
-      style={{ width: "100%", maxWidth: 420 }}
+      width="280"
       alt="Tela de descoberta musical com AudD no JunkBox"
     />
     <br />
