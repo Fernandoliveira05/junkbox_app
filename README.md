@@ -40,7 +40,7 @@ Para completar, existe também um lembrete diário de descoberta. Ele funciona c
 Mas não só de ideias viveria essa ponderada, também é importante mostrar o JunkBox funcionando de verdade. As telas abaixo ajudam a visualizar o caminho principal do usuário dentro do app, desde o primeiro acesso até a avaliação, o histórico, o compartilhamento e a descoberta musical pelo microfone. A intenção é deixar claro que o projeto não ficou só no conceito, mas ganhou fluxo, interface e uso real em Android.
 
 <p align="center">
-  Tela de login do JunkBox
+  <strong>Tela de login do JunkBox</strong>
 </p>
 
 <div align="center">
@@ -55,7 +55,7 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
 </div>
 
 <p align="center">
-  Tela de registro do JunkBox
+  <strong>Tela de registro do JunkBox</strong>
 </p>
 
 <div align="center">
@@ -70,7 +70,7 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
 </div>
 
 <p align="center">
-  Biblioteca de álbuns
+  <strong>Biblioteca de álbuns</strong>
 </p>
 
 <div align="center">
@@ -85,7 +85,7 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
 </div>
 
 <p align="center">
-  Avaliação de álbum com estrelas, comentário e tags
+  <strong>Avaliação de álbum com estrelas, comentário e tags</strong>
 </p>
 
 <div align="center">
@@ -100,7 +100,7 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
 </div>
 
 <p align="center">
-  Barra lateral com avaliações salvas
+  <strong>Barra lateral com avaliações salvas</strong>
 </p>
 
 <div align="center">
@@ -115,7 +115,7 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
 </div>
 
 <p align="center">
-  Imagem de story gerada para compartilhamento
+  <strong>Imagem de story gerada para compartilhamento</strong>
 </p>
 
 <div align="center">
@@ -130,7 +130,7 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
 </div>
 
 <p align="center">
-  Tela de descoberta musical com AudD
+  <strong>Tela de descoberta musical com AudD</strong>
 </p>
 
 <div align="center">
@@ -144,8 +144,8 @@ Mas não só de ideias viveria essa ponderada, também é importante mostrar o J
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
-  Fonte: Do autor (2026)
+<p align="center">
+  <strong>Fonte: Do autor (2026)</strong>
 </p>
 
 ## Vídeos do sistema
@@ -154,16 +154,16 @@ Além das imagens, também gravei dois vídeos para apresentar o JunkBox de um j
 
 No vídeo de demonstração é possível ver o uso do app em cenários como login, navegação pela biblioteca, avaliação de álbuns, uso das tags de vibe, visualização das avaliações salvas, compartilhamento e descoberta musical com o microfone. Já no vídeo explicativo, a intenção é deixar mais claro o raciocínio por trás do JunkBox e como a solução foi pensada.
 
-<p style={{ textAlign: "center" }}>
-  Demonstração do JunkBox em uso
+<p align="center">
+  <strong>Demonstração do JunkBox em uso</strong>
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <a href="https://youtu.be/J123f_hUERw">
       <img
         src="https://img.youtube.com/vi/J123f_hUERw/hqdefault.jpg"
-        style={{ width: "100%", maxWidth: 640 }}
+        width="640"
         alt="Thumbnail do vídeo de demonstração do JunkBox"
       />
     </a>
@@ -171,16 +171,16 @@ No vídeo de demonstração é possível ver o uso do app em cenários como logi
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
-  Explicação do projeto com facecam
+<p align="center">
+  <strong>Explicação do projeto com facecam</strong>
 </p>
 
-<div style={{ margin: 25 }}>
-  <div style={{ textAlign: "center" }}>
+<div align="center">
+  <div align="center">
     <a href="https://www.youtube.com/watch?v=__M1qSPl-B8">
       <img
         src="https://img.youtube.com/vi/__M1qSPl-B8/hqdefault.jpg"
-        style={{ width: "100%", maxWidth: 640 }}
+        width="640"
         alt="Thumbnail do vídeo explicativo do JunkBox com facecam"
       />
     </a>
@@ -188,8 +188,8 @@ No vídeo de demonstração é possível ver o uso do app em cenários como logi
   </div>
 </div>
 
-<p style={{ textAlign: "center" }}>
-  Fonte: Do autor (2026)
+<p align="center">
+  <strong>Fonte: Do autor (2026)</strong>
 </p>
 
 ## JunkBox Backend
